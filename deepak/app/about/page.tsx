@@ -87,9 +87,6 @@ export default function AboutPage() {
         {/* Bio Hero Section */}
         <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20 border-b border-[#192434]/[0.08]">
           <div className="max-w-3xl space-y-6">
-            <span className="text-xs font-mono text-[#0B46A3] uppercase tracking-widest block">
-              SOFTWARE &amp; AI ENGINEER
-            </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[1.12] uppercase tracking-tight text-[#192434]">
               Deepak Kumar Majhi
               <br />
@@ -118,9 +115,7 @@ export default function AboutPage() {
         {/* Education Section */}
         <div className="p-6 sm:p-10 border-b border-[#192434]/[0.08]">
           <div className="max-w-2xl mb-8 space-y-2">
-            <span className="text-xs font-mono text-[#0B46A3] uppercase tracking-widest block">
-              ACADEMIC BACKGROUND
-            </span>
+
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               Education
             </h2>
@@ -152,9 +147,6 @@ export default function AboutPage() {
         {/* Experience & Career Milestones */}
         <div className="p-6 sm:p-10 border-b border-[#192434]/[0.08]">
           <div className="max-w-2xl mb-8 space-y-2">
-            <span className="text-xs font-mono text-[#0B46A3] uppercase tracking-widest block">
-              PRACTICAL INDUSTRY EXPERIENCE
-            </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               Internships
             </h2>
@@ -191,9 +183,7 @@ export default function AboutPage() {
         {/* Technical Capabilities Matrix */}
         <div className="p-6 sm:p-10 border-b border-[#192434]/[0.08]">
           <div className="max-w-2xl mb-8 space-y-2">
-            <span className="text-xs font-mono text-[#0B46A3] uppercase tracking-widest block">
-              STACK &amp; PROFICIENCIES
-            </span>
+
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               Skills &amp; Technologies
             </h2>
@@ -224,9 +214,7 @@ export default function AboutPage() {
         {/* Achievements Section */}
         <div className="p-6 sm:p-10 border-b border-[#192434]/[0.08]">
           <div className="max-w-2xl mb-8 space-y-2">
-            <span className="text-xs font-mono text-[#0B46A3] uppercase tracking-widest block">
-              HONORS &amp; COMPETITIONS
-            </span>
+
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               Achievements
             </h2>

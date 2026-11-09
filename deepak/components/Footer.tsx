@@ -35,13 +35,6 @@ export default function Footer() {
     <footer className="mt-auto border-t border-[#192434]/[0.08] bg-[#F4F7FA] text-[#192434]">
       {/* Top Banner Bar */}
       <div className="max-w-7xl mx-auto border-x border-[#192434]/[0.08]">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#192434]/[0.08] text-xs font-mono uppercase tracking-wider">
-          <span className="font-serif text-lg tracking-tight text-[#192434]">
-            DM.
-          </span>
-          <span className="text-[#192434]/60">LET&apos;S WORK</span>
-        </div>
-
         {/* Big CTA Section */}
         <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20 border-b border-[#192434]/[0.08]">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-light leading-[1.18] uppercase tracking-tight text-[#192434]">
@@ -205,6 +198,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 }
