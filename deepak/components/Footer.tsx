@@ -60,9 +60,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#192434]/[0.08] text-xs font-mono">
           {/* NAV Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
+            {/* <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
               NAV
-            </span>
+            </span> */}
             <ul className="space-y-2.5 text-xs text-[#192434]/80">
               <li>
                 <Link
@@ -101,9 +101,9 @@ export default function Footer() {
 
           {/* SOCIALS Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
+            {/* <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
               SOCIALS
-            </span>
+            </span> */}
             <ul className="space-y-3 text-xs text-[#192434]/80">
               <li>
                 <a
@@ -164,9 +164,9 @@ export default function Footer() {
 
           {/* DETAILS Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
+            {/* <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
               LOCATION &amp; TIME
-            </span>
+            </span> */}
             <div className="space-y-2 text-xs text-[#192434]/80 leading-relaxed">
               <p className="text-[#192434] font-medium">Bhubaneswar, Odisha, India</p>
               <p>Local time: {timeString}</p>
@@ -177,9 +177,9 @@ export default function Footer() {
           {/* COPYRIGHT & BACK TO TOP Column */}
           <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-2">
-              <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
+              {/* <span className="text-[#192434]/40 uppercase tracking-widest text-[11px] block">
                 COPYRIGHT
-              </span>
+              </span> */}
               <p className="text-xs text-[#192434]/70 leading-relaxed">
                 © 2026 Deepak Kumar Majhi. All rights reserved.
               </p>
