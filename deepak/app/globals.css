@@ -27,6 +27,8 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -36,6 +38,8 @@ body {
   font-weight: 300;
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Custom Swiss Grid Utilities */
@@ -75,8 +79,44 @@ body {
   background: rgba(25, 36, 52, 0.3);
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 ::selection {
   background-color: #0B46A3;
   color: #F4F7FA;
 }
+
+/* 04 // Native SVG Reticle Cursor */
+@media (pointer: fine) {
+  /* 1. Default State: Sharp Slate Navy Geometric Arrow with Cobalt Blue Tip */
+  html,
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%23192434' stroke='%23F4F7FA' stroke-width='1.2' stroke-linejoin='miter'/%3E%3Cpath d='M3 3L9 6.5L6.5 9L3 3Z' fill='%230B46A3'/%3E%3C/svg%3E") 3 3, auto;
+  }
+
+  /* 2. Interactive / Link State: Cobalt Blue Architectural Reticle Pointer */
+  a,
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .cursor-pointer {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%230B46A3' stroke='%23F4F7FA' stroke-width='1.2' stroke-linejoin='miter'/%3E%3Ccircle cx='17' cy='17' r='2.5' fill='%230B46A3'/%3E%3C/svg%3E") 3 3, pointer !important;
+  }
+
+  /* 3. Text & Form Input State: Precision Cobalt Blue Architectural I-Beam */
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  [contenteditable="true"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 4H15M9 20H15M12 4V20' stroke='%230B46A3' stroke-width='1.6' stroke-linecap='square'/%3E%3C/svg%3E") 12 12, text !important;
+  }
+}
+
 

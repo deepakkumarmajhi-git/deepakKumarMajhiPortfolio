@@ -69,7 +69,7 @@ export default function Footer() {
                   href="/works"
                   className="hover:text-[#0B46A3] transition-colors"
                 >
-                  Work
+                  Works
                 </Link>
               </li>
               <li>

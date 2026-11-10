@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import React from "react";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 function GithubIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
   return (
@@ -40,7 +41,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group border border-[#192434]/[0.08] bg-[#F4F7FA] hover:bg-white/80 transition-all duration-300 flex flex-col justify-between">
+    <SpotlightCard className="h-full">
       {/* Card Header / Meta Bar */}
       <div className="flex items-center justify-between px-6 py-3.5 border-b border-[#192434]/[0.08] text-xs font-mono">
         <div className="flex items-center gap-2 text-[#192434]/60">
@@ -103,7 +104,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="group/link inline-flex items-center gap-1 text-[#192434] hover:text-[#0B46A3] transition-colors"
             >
               <span>Case Study</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#0B46A3] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#0B46A3] transition-transform duration-200 group-hover/link:translate-x-[2px] group-hover/link:-translate-y-[2px]" />
             </a>
           )}
           {project.githubUrl && (
@@ -111,15 +112,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group/link inline-flex items-center gap-1 text-[#192434]/70 hover:text-[#192434] transition-colors"
+              className="group/link inline-flex items-center gap-1 text-[#192434]/70 hover:text-[#0B46A3] transition-colors"
             >
-              <GithubIcon className="w-3.5 h-3.5 text-[#192434]/50" />
+              <GithubIcon className="w-3.5 h-3.5 text-[#192434]/50 group-hover/link:text-[#0B46A3] transition-colors" />
               <span>View Github</span>
-              <ArrowUpRight className="w-3 h-3 text-[#192434]/40 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              <ArrowUpRight className="w-3 h-3 text-[#192434]/40 group-hover/link:text-[#0B46A3] transition-all duration-200 group-hover/link:translate-x-[2px] group-hover/link:-translate-y-[2px]" />
             </a>
           )}
         </div>
       </div>
-    </article>
+    </SpotlightCard>
   );
 }
