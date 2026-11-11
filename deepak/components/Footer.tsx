@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, ArrowUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon, LeetcodeIcon, MailIcon } from "@/components/SocialIcons";
 
 export default function Footer() {
@@ -23,13 +23,6 @@ export default function Footer() {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <footer className="mt-auto w-full border-t border-white/10 bg-[#0D131D] text-[#F4F7FA]">
@@ -86,6 +79,14 @@ export default function Footer() {
                   className="hover:text-[#3B82F6] transition-colors"
                 >
                   About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resume"
+                  className="hover:text-[#3B82F6] transition-colors"
+                >
+                  Resume
                 </Link>
               </li>
               <li>
@@ -174,27 +175,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* COPYRIGHT & BACK TO TOP Column */}
-          <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
-                COPYRIGHT
-              </span>
-              <p className="text-xs text-[#F4F7FA]/75 leading-relaxed">
-                © 2026 Deepak Kumar Majhi. All rights reserved.
-              </p>
-            </div>
-
-            <div>
-              <button
-                type="button"
-                onClick={scrollToTop}
-                className="group inline-flex items-center gap-1.5 text-xs text-[#F4F7FA] hover:text-[#3B82F6] transition-colors font-mono tracking-wider"
-              >
-                <span>Back to Top</span>
-                <ArrowUp className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-1" />
-              </button>
-            </div>
+          {/* COPYRIGHT Column */}
+          <div className="p-6 sm:p-8 space-y-4">
+            <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
+              COPYRIGHT
+            </span>
+            <p className="text-xs text-[#F4F7FA]/75 leading-relaxed">
+              © 2026 Deepak Kumar Majhi. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
