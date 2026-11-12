@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ArrowUpRight, CheckCircle2, AlertCircle } from "lucide-react";
-import DatacenterGraphic from "@/components/DatacenterGraphic";
-import { GithubIcon, LinkedinIcon, LeetcodeIcon, MailIcon } from "@/components/SocialIcons";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,24 +11,6 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "dispatched" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [localTime, setLocalTime] = useState<string>("18:00:00");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setLocalTime(
-        now.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-        })
-      );
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,7 +44,7 @@ export default function ContactPage() {
 
       setStatus("dispatched");
       setFormData({ name: "", email: "", message: "" });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Submission error:", err);
       setStatus("error");
       setErrorMessage(
@@ -75,33 +55,56 @@ export default function ContactPage() {
 
   return (
     <div className="w-full bg-[#F4F7FA]">
-      <div className="max-w-7xl mx-auto border-x border-[#192434]/[0.08]">
+      <div className="max-w-7xl mx-auto border-x border-[#192434]/10">
         {/* 2-Column Swiss Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#192434]/[0.08]">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
           {/* =========================================================================
-              LEFT COLUMN: Header & Minimalist Form
+              LEFT COLUMN: Editorial Header Block
               ========================================================================= */}
-          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-between space-y-10">
-            <div className="space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-[2.6rem] font-light leading-[1.14] uppercase tracking-tight text-[#192434]">
-                INITIATE A PROJECT
+          <div className="lg:col-span-5 p-6 sm:p-10 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#192434]/10 flex flex-col justify-between">
+            <div>
+              {/* Two-line Display Heading */}
+              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.85rem] font-light uppercase leading-[1.14] tracking-tight text-[#192434]">
+                LET&apos;S CONNECT
                 <br />
-                <span className="text-[#0B46A3] font-normal">
-                  [OR DISCUSS INTELLIGENT
-                  <br />
-                  SYSTEMS.]
-                </span>
+                <span className="font-normal text-[#0B46A3]">AND BUILD TOGETHER.</span>
               </h1>
+
+              {/* Concise Subtitle */}
+              <p className="mt-5 text-sm sm:text-base font-light leading-relaxed text-[#192434]/70 max-w-md">
+                Whether you&apos;re hiring for a Software &amp; AI Engineer role, scaling a backend system, or just want to say hello—my inbox is open.
+              </p>
             </div>
 
-            {/* Status Notifications */}
+            {/* Direct Channel Telemetry Footer */}
+            <div className="pt-8 mt-10 lg:mt-16 border-t border-[#192434]/10 text-xs font-mono text-[#192434]/60 space-y-1.5">
+              <span className="text-[10px] text-[#192434]/40 uppercase tracking-widest block">
+                DIRECT INBOX
+              </span>
+              <a
+                href="mailto:mdeepakkumar443@gmail.com"
+                className="text-sm font-medium text-[#192434] hover:text-[#0B46A3] transition-colors block"
+              >
+                mdeepakkumar443@gmail.com
+              </a>
+              <p className="text-[11px] text-[#192434]/50">
+                Bhubaneswar, Odisha
+              </p>
+            </div>
+          </div>
+
+          {/* =========================================================================
+              RIGHT COLUMN: Contact Form
+              ========================================================================= */}
+          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 bg-white/40 flex flex-col justify-center">
+            {/* Success Confirmation State */}
             {status === "dispatched" ? (
-              <div className="p-8 border border-[#192434]/15 bg-white space-y-4 my-8">
-                <div className="flex items-center gap-2 text-[#0B46A3] font-mono text-xs">
+              <div className="p-8 border border-[#192434]/15 bg-white space-y-4 shadow-sm max-w-2xl">
+                <div className="flex items-center gap-2 text-[#0B46A3] font-mono text-xs uppercase tracking-wider">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Message dispatched successfully</span>
                 </div>
-                <p className="text-sm font-light text-[#192434]">
+                <p className="text-sm font-light text-[#192434] leading-relaxed">
                   Thank you. Deepak Kumar Majhi has received your inquiry directly. A response will be dispatched to your email address shortly.
                 </p>
                 <button
@@ -110,16 +113,17 @@ export default function ContactPage() {
                     setStatus("idle");
                     setErrorMessage("");
                   }}
-                  className="text-xs font-mono text-[#0B46A3] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#0B46A3] hover:underline pt-2 cursor-pointer"
                 >
-                  Dispatch another message &rarr;
+                  <span>Dispatch another message</span>
+                  <span>&rarr;</span>
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 my-6">
+              <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
                 {/* Error Banner */}
                 {status === "error" && errorMessage && (
-                  <div className="p-4 border border-rose-500/30 bg-rose-50/60 text-xs font-mono text-rose-800 flex items-start gap-2.5">
+                  <div className="p-4 border border-rose-500/30 bg-rose-50/70 text-xs font-mono text-rose-800 flex items-start gap-2.5">
                     <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                     <div className="space-y-1">
                       <p className="font-medium">Transmission Error</p>
@@ -129,179 +133,93 @@ export default function ContactPage() {
                 )}
 
                 {/* Field 01: Name */}
-                <div className="space-y-1 group">
-                  <label className="block text-xs font-mono text-[#192434]/60 group-focus-within:text-[#0B46A3] transition-colors">
-                    01. Your Name
+                <div className="space-y-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                  >
+                    YOUR NAME
                   </label>
                   <input
+                    id="name"
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    placeholder="Engineering Lead / Collaborator"
-                    className="w-full bg-transparent border-b border-[#192434]/20 py-2.5 text-base sm:text-lg font-light text-[#192434] placeholder:text-[#192434]/30 focus:outline-none focus:border-[#0B46A3] transition-colors"
+                    placeholder="e.g., Arjun Mehta"
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
 
                 {/* Field 02: Email */}
-                <div className="space-y-1 group">
-                  <label className="block text-xs font-mono text-[#192434]/60 group-focus-within:text-[#0B46A3] transition-colors">
-                    02. Your Email
+                <div className="space-y-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                  >
+                    YOUR EMAIL
                   </label>
                   <input
+                    id="email"
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    placeholder="name@domain.com"
-                    className="w-full bg-transparent border-b border-[#192434]/20 py-2.5 text-base sm:text-lg font-light text-[#192434] placeholder:text-[#192434]/30 focus:outline-none focus:border-[#0B46A3] transition-colors"
+                    placeholder="arjun@acme.ai"
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
 
-                {/* Field 03: Message / Scope */}
-                <div className="space-y-1 group">
-                  <label className="block text-xs font-mono text-[#192434]/60 group-focus-within:text-[#0B46A3] transition-colors">
-                    03. What are we building?
+                {/* Field 03: Message */}
+                <div className="space-y-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                  >
+                    WHAT ARE WE BUILDING?
                   </label>
                   <textarea
-                    rows={4}
+                    id="message"
+                    rows={5}
                     required
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    placeholder="Specify project scope, software engineering requirements, GenAI / RAG pipeline, or full-stack architecture..."
-                    className="w-full bg-transparent border-b border-[#192434]/20 py-2.5 text-sm sm:text-base font-light text-[#192434] placeholder:text-[#192434]/30 focus:outline-none focus:border-[#0B46A3] transition-colors resize-none"
+                    placeholder="Tell me about the role, project architecture, timeline, or idea you'd like to collaborate on..."
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
-                {/* Submit button */}
-                <div className="pt-2 flex items-center gap-4">
+                {/* Submit Button & Feedback */}
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 text-xs font-mono uppercase tracking-wider text-[#192434] border border-[#192434]/30 hover:border-[#0B46A3] hover:text-[#0B46A3] transition-all duration-200 bg-white shadow-sm disabled:opacity-50 cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B46A3] hover:bg-[#192434] text-[#F4F7FA] px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors shadow-sm disabled:opacity-50 cursor-pointer"
                   >
                     <span>
                       {status === "submitting" ? "Dispatching Message..." : "Dispatch Message"}
                     </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#0B46A3] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    {status === "submitting" ? (
+                      <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#F4F7FA]" />
+                    )}
                   </button>
 
                   {status === "submitting" && (
-                    <span className="text-xs font-mono text-[#192434]/50 animate-pulse">
+                    <span className="text-xs font-mono text-[#192434]/50 animate-pulse text-center sm:text-left">
                       Contacting mail gateway...
                     </span>
                   )}
                 </div>
               </form>
             )}
-          </div>
-
-          {/* =========================================================================
-              RIGHT COLUMN: Direct Route, Network & Source, Infra Status, Datacenter
-              ========================================================================= */}
-          <div className="lg:col-span-5 divide-y divide-[#192434]/[0.08] flex flex-col justify-between">
-            {/* DIRECT ROUTE Panel */}
-            <div className="p-6 sm:p-8 space-y-3">
-              <span className="text-xs font-mono text-[#192434]/50 uppercase tracking-widest block">
-                Direct Route
-              </span>
-              <a
-                href="mailto:mdeepakkumar443@gmail.com"
-                className="block text-lg sm:text-xl font-light text-[#192434] hover:text-[#0B46A3] transition-colors"
-              >
-                mdeepakkumar443@gmail.com
-              </a>
-              <p className="text-xs font-mono text-[#192434]/60">
-                Direct Line: +91 7847827737
-              </p>
-            </div>
-
-            {/* NETWORK & SOURCE Panel */}
-            <div className="p-6 sm:p-8 space-y-4">
-              <span className="text-xs font-mono text-[#192434]/50 uppercase tracking-widest block">
-                Network &amp; Source
-              </span>
-              <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-                <a
-                  href="https://github.com/deepakkumarmajhi-git"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between text-[#192434] hover:text-[#0B46A3] transition-colors py-1 group"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <GithubIcon className="w-3.5 h-3.5 text-[#192434]/60 group-hover:text-[#0B46A3]" />
-                    <span>GitHub</span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 text-[#192434]/40 group-hover:text-[#0B46A3]" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/deepakmajhihello/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between text-[#192434] hover:text-[#0B46A3] transition-colors py-1 group"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <LinkedinIcon className="w-3.5 h-3.5 text-[#192434]/60 group-hover:text-[#0B46A3]" />
-                    <span>LinkedIn</span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 text-[#192434]/40 group-hover:text-[#0B46A3]" />
-                </a>
-                <a
-                  href="https://leetcode.com/u/hello_deepak"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between text-[#192434] hover:text-[#0B46A3] transition-colors py-1 group"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <LeetcodeIcon className="w-3.5 h-3.5 text-[#192434]/60 group-hover:text-[#0B46A3]" />
-                    <span>LeetCode</span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 text-[#192434]/40 group-hover:text-[#0B46A3]" />
-                </a>
-                <a
-                  href="mailto:mdeepakkumar443@gmail.com"
-                  className="flex items-center justify-between text-[#192434] hover:text-[#0B46A3] transition-colors py-1 group"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <MailIcon className="w-3.5 h-3.5 text-[#192434]/60 group-hover:text-[#0B46A3]" />
-                    <span>Email</span>
-                  </span>
-                  <ArrowUpRight className="w-3 h-3 text-[#192434]/40 group-hover:text-[#0B46A3]" />
-                </a>
-              </div>
-            </div>
-
-            {/* INFRASTRUCTURE STATUS Panel */}
-            <div className="p-6 sm:p-8 space-y-3">
-              <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-[#192434]/50 uppercase tracking-widest">Location &amp; Local Time</span>
-                <span className="text-[#192434]/60 font-medium">{localTime}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-base sm:text-lg font-light text-[#192434]">
-                    Bhubaneswar, Odisha, India
-                  </h4>
-                  <p className="text-xs font-mono text-[#192434]/60 mt-0.5">
-                    Available for Remote &amp; On-Site Opportunities
-                  </p>
-                </div>
-                <span className="text-[11px] font-mono px-2.5 py-0.5 border border-[#192434]/15 text-[#192434]/70 bg-white">
-                  Available
-                </span>
-              </div>
-            </div>
-
-            {/* Architectural Visual Diagram: Datacenter Schematic */}
-            <div className="p-6 sm:p-8">
-              <DatacenterGraphic />
-            </div>
           </div>
         </div>
       </div>
