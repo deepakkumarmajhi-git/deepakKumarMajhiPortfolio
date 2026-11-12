@@ -190,7 +190,7 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    placeholder="Tell me about the role, project architecture, timeline, or idea you'd like to collaborate on..."
+                    placeholder="Hey Deepak — I loved your work on the Smart Agriculture system and wanted to chat about..."
                     className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors resize-none"
                   />
                 </div>
