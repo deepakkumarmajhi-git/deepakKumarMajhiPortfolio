@@ -172,14 +172,14 @@ export default function AboutPage() {
             <h1 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.3] sm:leading-[1.35] text-[#192434] space-y-2 sm:space-y-3 flex flex-col">
               <span>
                 Hi, my name is{" "}
-                <span className="font-semibold text-4xl sm:text-6xl lg:text-[4rem] text-[#192434]">
+                <span className="text-4xl sm:text-6xl lg:text-[4rem] text-[#0B46A3]">
                   Deepak
                 </span>
-                .
+
               </span>
 
               <span className="text-[#192434]/80">
-                and it&apos;s <span className=" text-[#0B46A3]">nice to meet you</span>.
+                and it&apos;s <span className="">nice to meet you</span>.
               </span>
             </h1>
             {/* Action Row */}
