@@ -148,7 +148,7 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    placeholder="e.g., Arjun Mehta"
+                    placeholder="What should I call you?"
                     className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    placeholder="arjun@acme.ai"
+                    placeholder="Where can I reach you back?"
                     className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
