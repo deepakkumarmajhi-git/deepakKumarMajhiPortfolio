@@ -179,7 +179,7 @@ export default function AboutPage() {
               </span>
 
               <span className="text-[#192434]/80">
-                and it&apos;s <span className="">nice to meet you</span>.
+                and it&apos;s <span className="">nice to meet you  :)</span>
               </span>
             </h1>
             {/* Action Row */}
@@ -211,58 +211,63 @@ export default function AboutPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* SECTION 02 // MY STORY & FIELD MEMORIES (SWAPPED SIDES)  */}
+        {/* SECTION 02: THE STORY (LEFT) + SECTION HEADING (RIGHT)    */}
         {/* ========================================================= */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#192434]/10">
-          {/* Left Column: Photo Stack (No toggle, clean single memory frame) */}
-          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-14 border-b lg:border-b-0 lg:border-r border-[#192434]/10 flex items-center justify-center bg-[#192434]/[0.015]">
-            <PhotoCollageFrame photos={memoryPhotos} />
+        <section className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#192434]/10 min-h-[460px] lg:min-h-[560px]">
+          {/* Left Column: First-Person Story Paragraphs */}
+          <div className="order-2 lg:order-1 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 border-t lg:border-t-0 lg:border-r border-[#192434]/10 flex flex-col justify-center">
+            <div className="space-y-5 text-base sm:text-[18px] leading-[1.8] text-[#192434]/80 font-light max-w-xl">
+              <p className="first-letter:text-[36px] sm:first-letter:text-[42px] first-letter:font-normal first-letter:text-[#0B46A3]">
+                I’m a final-year Computer Science student in Bhubaneswar who
+                loves figuring out how things work behind the screen. Most of my
+                time goes into building backend systems and AI tools that solve
+                real problems—from shipping production APIs during my internship
+                at Upskalor Technologies to training voice models that speak my
+                native language, Odia.
+              </p>
+              <p>
+                I learn best by jumping in and building. Whether I’m pulling an
+                all-nighter with friends at a hackathon, exploring robotics at the
+                AI Impact Summit in New Delhi.
+              </p>
+            </div>
           </div>
 
-          {/* Right Column: Authentic Story Narrative */}
-          <div className="lg:col-span-6 p-6 sm:p-10 lg:p-14 flex flex-col justify-center space-y-6">
-            <div>
-
-
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#192434] uppercase tracking-tight leading-tight">
-                Curious by nature, builder by habit.
-              </h2>
-            </div>
-
-            <div className="space-y-4 text-xs sm:text-sm text-[#192434]/80 font-light leading-relaxed">
-              <p>
-                My path into technology didn’t start with memorizing textbook
-                algorithms—it started with sheer curiosity about how software
-                quietly coordinates the world around us. That drive led me to start
-                building early: turning raw ideas into functional systems,
-                experimenting with language models, and creating software that
-                solves concrete problems rather than existing as theoretical code.
-              </p>
-              <p>
-                I believe engineers grow fastest outside four walls. Traveling to{" "}
-                <strong className="font-medium text-[#192434]">
-                  New Delhi for the AI Impact Summit
-                </strong>{" "}
-                offered a direct look at defense automation, robotics, and
-                large-scale engineering dialogues. At the same time, teaming up
-                with close peers at{" "}
-                <strong className="font-medium text-[#192434]">
-                  HackFest Bhubaneswar 2026
-                </strong>{" "}
-                and Google Developer Group sprints showed me the electricity of
-                shipping resilient prototypes under high-pressure clocks.
-              </p>
-              <p>
-                Right now, I am challenging myself with a{" "}
-                <strong className="font-medium text-[#0B46A3]">
-                  60-day unscripted public speaking log
-                </strong>
-                —recording daily 10-to-15-minute raw reflections on AI,
-                science, and engineering. It forces me to strip away buzzwords,
-                stress-test my understanding, and articulate complex concepts
-                with genuine clarity.
-              </p>
-            </div>
+          {/* Right Column: Heading Matching Section 01 Style */}
+          <div className="order-1 lg:order-2 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
+            <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.3] sm:leading-[1.35] text-[#192434] space-y-2 sm:space-y-3 flex flex-col">
+              <span>
+                A little{" "}
+                <span className="relative inline-block">
+                  about me
+                  <svg
+                    viewBox="0 0 200 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute -bottom-1.5 sm:-bottom-2 left-0 w-full h-[9px] sm:h-[12px] text-[#0B46A3] pointer-events-none"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M 2 10 C 45 3, 110 3, 198 8"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 8 13 C 55 6, 120 6, 192 11"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      opacity="0.65"
+                    />
+                  </svg>
+                </span>
+                ,
+              </span>
+              <span className="text-[#192434]/80">
+                and what I love building.
+              </span>
+            </h2>
           </div>
         </section>
 
