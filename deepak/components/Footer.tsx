@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon, LeetcodeIcon, MailIcon } from "@/components/SocialIcons";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  LeetcodeIcon,
+  MailIcon,
+} from "@/components/SocialIcons";
 
 export default function Footer() {
   const [timeString, setTimeString] = useState<string>("7:15 PM");
@@ -35,7 +40,9 @@ export default function Footer() {
             <br />
             A PROJECT?
             <br />
-            <span className="text-[#3B82F6] font-normal">[LET&apos;S COLLABORATE.]</span>
+            <span className="text-[#3B82F6] font-normal">
+              LET&apos;S COLLABORATE.
+            </span>
           </h2>
 
           <div className="mt-8 sm:mt-10">
@@ -53,9 +60,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 text-xs font-mono">
           {/* NAV Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
-              NAV
-            </span>
             <ul className="space-y-2.5 text-xs text-[#F4F7FA]/80">
               <li>
                 <Link
@@ -102,10 +106,6 @@ export default function Footer() {
 
           {/* SOCIALS & CONNECTIONS Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
-              SOCIALS &amp; CONNECTIONS
-            </span>
-
             {/* Highlighted LinkedIn CTA Button (No brackets, no arrow, single LinkedIn link) */}
             <div className="pt-0.5 pb-1">
               <a
@@ -118,7 +118,6 @@ export default function Footer() {
                 <span>Connect on LinkedIn</span>
               </a>
             </div>
-
             <ul className="space-y-3 text-xs text-[#F4F7FA]/80">
               <li>
                 <a
@@ -162,24 +161,17 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           {/* LOCATION & TIME Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
-              LOCATION &amp; TIME
-            </span>
             <div className="space-y-2 text-xs text-[#F4F7FA]/80 leading-relaxed">
-              <p className="text-[#F4F7FA] font-medium">Bhubaneswar, Odisha, India</p>
+              <p className="text-[#F4F7FA] font-medium">
+                Bhubaneswar, Odisha, India
+              </p>
               <p>Local time: {timeString}</p>
-              <p className="text-[#F4F7FA]/45 text-[11px]">UTC+05:30 / IST</p>
             </div>
           </div>
-
           {/* COPYRIGHT Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            <span className="text-[#F4F7FA]/40 uppercase tracking-widest text-[11px] block">
-              COPYRIGHT
-            </span>
             <p className="text-xs text-[#F4F7FA]/75 leading-relaxed">
               © 2026 Deepak Kumar Majhi. All rights reserved.
             </p>
