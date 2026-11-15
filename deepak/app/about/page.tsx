@@ -12,6 +12,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { PhotoCollageFrame, PhotoCardItem } from "@/components/PhotoCollageFrame";
+import EventCarouselVideoFrame from "@/components/EventCarouselVideoFrame";
 
 export default function AboutPage() {
   // Section 01 Portrait Stack Photos
@@ -158,11 +159,11 @@ export default function AboutPage() {
 
   return (
     <div className="w-full bg-[#F4F7FA]">
-      <div className="max-w-7xl mx-auto border-x border-[#192434]/[0.08]">
+      <div className="max-w-7xl mx-auto">
         {/* ========================================================= */}
         {/* SECTION 01 // HERO GREETING & OVERLAPPING PORTRAIT FRAME */}
         {/* ========================================================= */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#192434]/10">
+        <section className="grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Greeting & Narrative */}
           <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 flex flex-col justify-center">
             <div className="mb-4">
@@ -205,7 +206,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Overlapping 3-Photo Frame */}
-          <div className="lg:col-span-5 p-6 sm:p-10 lg:p-12 border-t lg:border-t-0 lg:border-l border-[#192434]/10 flex flex-col items-center justify-center bg-[#192434]/[0.015]">
+          <div className="lg:col-span-5 p-6 sm:p-10 lg:p-12 flex flex-col items-center justify-center">
             <PhotoCollageFrame photos={portraitPhotos} />
           </div>
         </section>
@@ -213,9 +214,9 @@ export default function AboutPage() {
         {/* ========================================================= */}
         {/* SECTION 02: THE STORY (LEFT) + SECTION HEADING (RIGHT)    */}
         {/* ========================================================= */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#192434]/10 min-h-[460px] lg:min-h-[560px]">
+        <section className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px] lg:min-h-[560px]">
           {/* Left Column: First-Person Story Paragraphs */}
-          <div className="order-2 lg:order-1 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 border-t lg:border-t-0 lg:border-r border-[#192434]/10 flex flex-col justify-center">
+          <div className="order-2 lg:order-1 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
             <div className="space-y-5 text-base sm:text-[18px] leading-[1.8] text-[#192434]/80 font-light max-w-xl">
               <p className="first-letter:text-[36px] sm:first-letter:text-[42px] first-letter:font-normal first-letter:text-[#0B46A3]">
                 I’m a final-year Computer Science student in Bhubaneswar who
@@ -272,17 +273,65 @@ export default function AboutPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* SECTION 03 // PHILOSOPHY & ICEBERG (IMAGE + EXPLANATION)   */}
+        {/* SECTION 03: REAL-WORLD STORY (LEFT) + BLANK MEDIA SLOT (RIGHT) */}
         {/* ========================================================= */}
-        <section className="border-b border-[#192434]/10">
-          <div className="p-6 sm:p-10 lg:px-14 py-8 border-b border-[#192434]/10">
+        <section className="bg-[#F4F7FA]">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Left Column: Conversational Real-World Story */}
+            <div className="order-1 lg:order-1 lg:col-span-7 p-6 sm:p-10 lg:p-16 flex flex-col justify-center">
+              <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.18] sm:leading-[1.22] text-[#192434] space-y-1 sm:space-y-1.5 flex flex-col mb-6">
+                <span>Stepping outside the classroom,</span>
+                <span className="text-[#192434]/80 font-light">
+                  and learning in the real world.
+                </span>
+              </h2>
 
+              <div className="space-y-4 text-base sm:text-[17px] leading-[1.75] text-[#192434]/80 font-light">
+                <p>
+                  The biggest leaps in how I build happened outside lecture halls.
+                  During my backend and AI internship at{" "}
+                  <span className="font-normal text-[#192434]">
+                    Upskalor Technologies
+                  </span>
+                  , I learned how to ship production APIs and automation workflows that
+                  real users depend on. That same rush of building under pressure is why
+                  I love hackathons—leading my team to{" "}
+                  <span className="font-normal text-[#192434]">
+                    1st place at the GEC Hackathon 2026
+                  </span>{" "}
+                  taught me how to turn a raw idea into a working product overnight.
+                </p>
+
+                <p>
+                  Whenever I get the chance, I like stepping into bigger rooms to see
+                  where technology is heading. Traveling to{" "}
+                  <span className="font-normal text-[#192434]">
+                    New Delhi for the AI Impact Summit
+                  </span>{" "}
+                  and seeing robotics and defense systems up close reminded me why I
+                  love this field—and why I want to keep building systems that matter.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: 3D Coverflow Perspective Photo Carousel */}
+            <div className="order-2 lg:order-2 lg:col-span-5 p-4 sm:p-6 lg:p-8 flex items-center justify-center overflow-hidden">
+              <EventCarouselVideoFrame />
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* SECTION // PHILOSOPHY & ICEBERG (IMAGE + EXPLANATION)     */}
+        {/* ========================================================= */}
+        <section className="bg-[#F4F7FA]">
+          <div className="p-6 sm:p-10 lg:px-14 py-8">
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               The Elements of Building
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#192434]/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Left Column: Attached Iceberg Image */}
             <div className="lg:col-span-5 p-6 sm:p-10 lg:p-12 flex items-center justify-center bg-white">
               <div className="relative w-full max-w-[400px] flex items-center justify-center">
@@ -360,7 +409,7 @@ export default function AboutPage() {
               </div>
 
               {/* Attribution */}
-              <div className="pt-3 border-t border-[#192434]/10 text-[11px] font-mono text-[#192434]/50">
+              <div className="pt-3 text-[11px] font-mono text-[#192434]/50">
                 Illustration based on the book &apos;The Elements of User Experience&apos; by Jesse James Garrett
               </div>
             </div>
@@ -370,8 +419,8 @@ export default function AboutPage() {
         {/* ========================================================= */}
         {/* SECTION 04 // OFFLINE MODE BENTO */}
         {/* ========================================================= */}
-        <section className="border-b border-[#192434]/10">
-          <div className="p-6 sm:p-10 lg:px-14 py-8 border-b border-[#192434]/10">
+        <section>
+          <div className="p-6 sm:p-10 lg:px-14 py-8">
 
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               What I do in my free time.
@@ -379,7 +428,7 @@ export default function AboutPage() {
           </div>
 
           {/* 2x2 Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#192434]/10">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Bento Card 1: Photography */}
             <div className="p-6 sm:p-8 space-y-3 hover:bg-white/40 transition-colors">
               <div className="flex items-center gap-2.5">
@@ -416,7 +465,7 @@ export default function AboutPage() {
             </div>
 
             {/* Bento Card 3: Cinema & Mystery Thrillers */}
-            <div className="p-6 sm:p-8 space-y-3 hover:bg-white/40 transition-colors border-t md:border-t border-[#192434]/10">
+            <div className="p-6 sm:p-8 space-y-3 hover:bg-white/40 transition-colors">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full border border-[#0B46A3]/30 bg-[#0B46A3]/5 flex items-center justify-center text-[#0B46A3]">
                   <Film className="w-4 h-4" />
@@ -434,7 +483,7 @@ export default function AboutPage() {
             </div>
 
             {/* Bento Card 4: Scooter Rides & Chai */}
-            <div className="p-6 sm:p-8 space-y-3 hover:bg-white/40 transition-colors border-t md:border-t border-[#192434]/10">
+            <div className="p-6 sm:p-8 space-y-3 hover:bg-white/40 transition-colors">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full border border-[#0B46A3]/30 bg-[#0B46A3]/5 flex items-center justify-center text-[#0B46A3]">
                   <Bike className="w-4 h-4" />
@@ -456,7 +505,7 @@ export default function AboutPage() {
         {/* SECTION 05 // A PEEK THROUGH MY LENS (VIEWFINDER DECK)     */}
         {/* ========================================================= */}
         <section className="p-6 sm:p-10 lg:p-14 space-y-6">
-          <div className="border-b border-[#192434]/10 pb-4">
+          <div className="pb-4">
 
             <h2 className="text-2xl sm:text-3xl font-light text-[#192434] uppercase tracking-tight">
               A small peek into my photography.

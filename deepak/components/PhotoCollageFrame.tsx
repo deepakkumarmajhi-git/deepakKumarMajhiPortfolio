@@ -60,11 +60,10 @@ export function ArchitecturalPhotoCard({
         scale: isActive ? 1.03 : 1,
       }}
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
-      className={`absolute w-[240px] sm:w-[280px] cursor-pointer select-none rounded-[2px] bg-white p-2 border transition-shadow duration-300 ${
-        isActive
-          ? "border-[#0B46A3] shadow-[0_16px_36px_-10px_rgba(11,70,163,0.22)] ring-1 ring-[#0B46A3]/30"
-          : "border-[#192434]/20 shadow-[0_10px_25px_-10px_rgba(25,36,52,0.12)] hover:border-[#192434]/40"
-      }`}
+      className={`absolute w-[240px] sm:w-[280px] cursor-pointer select-none rounded-[2px] bg-white p-2 border transition-shadow duration-300 ${isActive
+        ? "border-[#0B46A3] shadow-[0_16px_36px_-10px_rgba(11,70,163,0.22)] ring-1 ring-[#0B46A3]/30"
+        : "border-[#192434]/20 shadow-[0_10px_25px_-10px_rgba(25,36,52,0.12)]"
+        }`}
     >
       {/* Photo / Blueprint Placeholder Stage */}
       <div
@@ -92,12 +91,6 @@ export function ArchitecturalPhotoCard({
               }}
             />
 
-            {/* Corner Ticks */}
-            <span className="absolute top-1 left-1.5 font-mono text-[10px] text-[#192434]/40 leading-none">+</span>
-            <span className="absolute top-1 right-1.5 font-mono text-[10px] text-[#192434]/40 leading-none">+</span>
-            <span className="absolute bottom-1 left-1.5 font-mono text-[10px] text-[#192434]/40 leading-none">+</span>
-            <span className="absolute bottom-1 right-1.5 font-mono text-[10px] text-[#192434]/40 leading-none">+</span>
-
             <div className="relative z-10 flex flex-col items-center text-center px-1 my-auto">
               <div className="w-8 h-8 rounded-full border border-[#0B46A3]/30 bg-white/80 flex items-center justify-center text-[#0B46A3] shadow-xs">
                 <Camera className="w-4 h-4 text-[#0B46A3]" />
@@ -121,16 +114,12 @@ export function PhotoCollageFrame({
 
   return (
     <div
-      className={`relative w-full max-w-[440px] h-[360px] sm:h-[400px] flex items-center justify-center p-4 border border-[#192434]/10 bg-white/40 shadow-xs ${className}`}
+      className={`relative w-full max-w-[440px] h-[360px] sm:h-[400px] flex items-center justify-center p-4 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(!isHovered)}
     >
-      {/* Corner Ticks */}
-      <span className="absolute -top-1.5 -left-1.5 font-mono text-xs text-[#0B46A3] font-bold">+</span>
-      <span className="absolute -top-1.5 -right-1.5 font-mono text-xs text-[#0B46A3] font-bold">+</span>
-      <span className="absolute -bottom-1.5 -left-1.5 font-mono text-xs text-[#0B46A3] font-bold">+</span>
-      <span className="absolute -bottom-1.5 -right-1.5 font-mono text-xs text-[#0B46A3] font-bold">+</span>
+
 
       {/* Stacked Cards Container */}
       <div className="relative w-[260px] sm:w-[280px] h-[260px] sm:h-[280px] flex items-center justify-center">
