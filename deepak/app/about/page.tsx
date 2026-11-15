@@ -216,8 +216,8 @@ export default function AboutPage() {
         {/* ========================================================= */}
         <section className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px] lg:min-h-[560px]">
           {/* Left Column: First-Person Story Paragraphs */}
-          <div className="order-2 lg:order-1 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
-            <div className="space-y-5 text-base sm:text-[18px] leading-[1.8] text-[#192434]/80 font-light max-w-xl">
+          <div className="order-2 lg:order-1 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center items-center text-center">
+            <div className="space-y-5 text-base sm:text-[18px] leading-[1.8] text-[#192434]/80 font-light max-w-xl text-center">
               <p className="first-letter:text-[36px] sm:first-letter:text-[42px] first-letter:font-normal first-letter:text-[#0B46A3]">
                 I’m a final-year Computer Science student in Bhubaneswar who
                 loves figuring out how things work behind the screen. Most of my
@@ -235,8 +235,8 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Heading Matching Section 01 Style */}
-          <div className="order-1 lg:order-2 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.3] sm:leading-[1.35] text-[#192434] space-y-2 sm:space-y-3 flex flex-col">
+          <div className="order-1 lg:order-2 lg:col-span-6 p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center items-center text-center">
+            <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.3] sm:leading-[1.35] text-[#192434] space-y-2 sm:space-y-3 flex flex-col text-center items-center">
               <span>
                 A little{" "}
                 <span className="relative inline-block">
@@ -278,15 +278,15 @@ export default function AboutPage() {
         <section className="bg-[#F4F7FA]">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Left Column: Conversational Real-World Story */}
-            <div className="order-1 lg:order-1 lg:col-span-7 p-6 sm:p-10 lg:p-16 flex flex-col justify-center">
-              <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.18] sm:leading-[1.22] text-[#192434] space-y-1 sm:space-y-1.5 flex flex-col mb-6">
+            <div className="order-1 lg:order-1 lg:col-span-7 p-6 sm:p-10 lg:p-16 flex flex-col justify-center items-center text-center">
+              <h2 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-light tracking-tight leading-[1.18] sm:leading-[1.22] text-[#192434] space-y-1 sm:space-y-1.5 flex flex-col mb-6 text-center items-center">
                 <span>Stepping outside the classroom,</span>
                 <span className="text-[#192434]/80 font-light">
                   and learning in the real world.
                 </span>
               </h2>
 
-              <div className="space-y-4 text-base sm:text-[17px] leading-[1.75] text-[#192434]/80 font-light">
+              <div className="space-y-4 text-base sm:text-[17px] leading-[1.75] text-[#192434]/80 font-light text-center max-w-xl">
                 <p>
                   The biggest leaps in how I build happened outside lecture halls.
                   During my backend and AI internship at{" "}

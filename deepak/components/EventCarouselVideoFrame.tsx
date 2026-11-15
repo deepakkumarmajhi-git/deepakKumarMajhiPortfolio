@@ -155,11 +155,11 @@ export default function EventCarouselVideoFrame() {
                 rotateY: { type: "spring", stiffness: 180, damping: 24, mass: 0.8 },
                 opacity: { duration: 0.35, ease: "easeOut" },
               }}
-              className={`absolute top-0 bottom-0 my-auto w-[165px] sm:w-[195px] md:w-[215px] h-[235px] sm:h-[280px] md:h-[305px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer border-0 transition-[box-shadow] duration-500 will-change-transform ${isActive
-                  ? "shadow-[0_24px_50px_-12px_rgba(0,0,0,0.45),0_12px_24px_-8px_rgba(0,0,0,0.25),0_2px_6px_rgba(0,0,0,0.12)] cursor-grab active:cursor-grabbing"
+              className={`absolute top-0 bottom-0 my-auto w-[165px] sm:w-[195px] md:w-[215px] h-[235px] sm:h-[280px] md:h-[305px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer border-0 will-change-transform ${isActive
+                  ? "cursor-grab active:cursor-grabbing"
                   : isImmediateNeighbor
-                    ? "shadow-[0_14px_30px_-10px_rgba(0,0,0,0.25),0_4px_12px_-4px_rgba(0,0,0,0.15)] hover:opacity-95"
-                    : "shadow-[0_6px_18px_-6px_rgba(0,0,0,0.18)]"
+                    ? "hover:opacity-95"
+                    : ""
                 }`}
             >
               {/* Pure Photographic Content with zero artificial borders or glows */}
