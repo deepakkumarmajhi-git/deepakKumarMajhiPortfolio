@@ -35,7 +35,7 @@ export default function Footer() {
       {/* Top Banner Bar */}
       <div className="max-w-7xl mx-auto">
         {/* Big CTA Section */}
-        <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20">
+        <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20 border-b border-white/10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-light leading-[1.18] uppercase tracking-tight text-[#F4F7FA]">
             WANT TO START
             <br />
