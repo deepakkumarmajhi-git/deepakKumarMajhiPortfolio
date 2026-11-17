@@ -8,6 +8,7 @@ import {
   LinkedinIcon,
   LeetcodeIcon,
   MailIcon,
+  InstagramIcon,
 } from "@/components/SocialIcons";
 
 export default function Footer() {
@@ -30,11 +31,11 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="mt-auto w-full border-t border-white/10 bg-[#0D131D] text-[#F4F7FA]">
+    <footer className="mt-auto w-full bg-[#0D131D] text-[#F4F7FA]">
       {/* Top Banner Bar */}
-      <div className="max-w-7xl mx-auto border-x border-white/10">
+      <div className="max-w-7xl mx-auto">
         {/* Big CTA Section */}
-        <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20 border-b border-white/10">
+        <div className="px-6 sm:px-10 py-12 sm:py-16 md:py-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-light leading-[1.18] uppercase tracking-tight text-[#F4F7FA]">
             WANT TO START
             <br />
@@ -56,8 +57,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 4-Column Swiss Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 text-xs font-mono">
+        {/* 4-Column Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-xs font-mono">
           {/* NAV Column */}
           <div className="p-6 sm:p-8 space-y-4">
             <ul className="space-y-2.5 text-xs text-[#F4F7FA]/80">
@@ -106,19 +107,21 @@ export default function Footer() {
 
           {/* SOCIALS & CONNECTIONS Column */}
           <div className="p-6 sm:p-8 space-y-4">
-            {/* Highlighted LinkedIn CTA Button (No brackets, no arrow, single LinkedIn link) */}
-            <div className="pt-0.5 pb-1">
-              <a
-                href="https://www.linkedin.com/in/deepakmajhihello/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[3px] bg-[#1D63DC] hover:bg-[#2563EB] px-3.5 py-2 text-[11px] font-medium uppercase tracking-wider text-[#F4F7FA] shadow-[0_0_20px_rgba(29,99,220,0.35)] transition-all duration-200 hover:-translate-y-[1px]"
-              >
-                <LinkedinIcon className="w-3.5 h-3.5 text-[#F4F7FA]" />
-                <span>Connect on LinkedIn</span>
-              </a>
-            </div>
             <ul className="space-y-3 text-xs text-[#F4F7FA]/80">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/deepakmajhihello/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#3B82F6] transition-colors flex items-center justify-between group"
+                >
+                  <span className="flex items-center gap-2">
+                    <LinkedinIcon className="w-3.5 h-3.5 text-[#F4F7FA]/60 group-hover:text-[#3B82F6]" />
+                    <span>LinkedIn</span>
+                  </span>
+                  <ArrowUpRight className="w-3 h-3 text-[#F4F7FA]/40 group-hover:text-[#3B82F6]" />
+                </a>
+              </li>
               <li>
                 <a
                   href="https://github.com/deepakkumarmajhi-git"
@@ -149,6 +152,20 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="https://www.instagram.com/maverick.dpk273"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#3B82F6] transition-colors flex items-center justify-between group"
+                >
+                  <span className="flex items-center gap-2">
+                    <InstagramIcon className="w-3.5 h-3.5 text-[#F4F7FA]/60 group-hover:text-[#3B82F6]" />
+                    <span>Instagram</span>
+                  </span>
+                  <ArrowUpRight className="w-3 h-3 text-[#F4F7FA]/40 group-hover:text-[#3B82F6]" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:mdeepakkumar443@gmail.com"
                   className="hover:text-[#3B82F6] transition-colors flex items-center justify-between group"
                 >
@@ -162,7 +179,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* LOCATION & TIME Column */}
-          <div className="p-6 sm:p-8 space-y-4">
+          <div className="p-6 sm:p-8 space-y-4 flex flex-col justify-center items-center text-center">
             <div className="space-y-2 text-xs text-[#F4F7FA]/80 leading-relaxed">
               <p className="text-[#F4F7FA] font-medium">
                 Bhubaneswar, Odisha, India
@@ -171,7 +188,7 @@ export default function Footer() {
             </div>
           </div>
           {/* COPYRIGHT Column */}
-          <div className="p-6 sm:p-8 space-y-4">
+          <div className="p-6 sm:p-8 space-y-4 flex flex-col justify-center items-center text-center">
             <p className="text-xs text-[#F4F7FA]/75 leading-relaxed">
               © 2026 Deepak Kumar Majhi. All rights reserved.
             </p>
