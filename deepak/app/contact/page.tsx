@@ -55,35 +55,35 @@ export default function ContactPage() {
 
   return (
     <div className="w-full bg-[#F4F7FA]">
-      <div className="max-w-7xl mx-auto border-x border-[#192434]/10">
+      <div className="max-w-7xl mx-auto border-x-0 sm:border-x border-[#192434]/10">
         {/* 2-Column Swiss Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12">
           {/* =========================================================================
               LEFT COLUMN: Editorial Header Block
               ========================================================================= */}
-          <div className="lg:col-span-5 p-6 sm:p-10 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#192434]/10 flex flex-col justify-between">
+          <div className="lg:col-span-5 p-5 sm:p-10 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#192434]/10 flex flex-col justify-between">
             <div>
               {/* Two-line Display Heading */}
-              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.85rem] font-light uppercase leading-[1.14] tracking-tight text-[#192434]">
+              <h1 className="mt-2 sm:mt-4 text-2xl xs:text-3xl sm:text-4xl lg:text-[2.85rem] font-light uppercase leading-[1.15] tracking-tight text-[#192434]">
                 LET&apos;S CONNECT
                 <br />
                 <span className="font-normal text-[#0B46A3]">AND BUILD TOGETHER.</span>
               </h1>
 
               {/* Concise Subtitle */}
-              <p className="mt-5 text-sm sm:text-base font-light leading-relaxed text-[#192434]/70 max-w-md">
+              <p className="mt-4 sm:mt-5 text-sm sm:text-base font-light leading-relaxed text-[#192434]/70 max-w-md">
                 Whether you&apos;re hiring for a Software &amp; AI Engineer role, scaling a backend system, or just want to say hello—my inbox is open.
               </p>
             </div>
 
             {/* Direct Channel Telemetry Footer */}
-            <div className="pt-8 mt-10 lg:mt-16 border-t border-[#192434]/10 text-xs font-mono text-[#192434]/60 space-y-1.5">
+            <div className="pt-6 sm:pt-8 mt-8 sm:mt-10 lg:mt-16 border-t border-[#192434]/10 text-xs font-mono text-[#192434]/60 space-y-1.5">
               <span className="text-[10px] text-[#192434]/40 uppercase tracking-widest block">
                 DIRECT INBOX
               </span>
               <a
                 href="mailto:mdeepakkumar443@gmail.com"
-                className="text-sm font-medium text-[#192434] hover:text-[#0B46A3] transition-colors block"
+                className="text-xs sm:text-sm font-medium text-[#192434] hover:text-[#0B46A3] transition-colors block break-all"
               >
                 mdeepakkumar443@gmail.com
               </a>
@@ -96,10 +96,10 @@ export default function ContactPage() {
           {/* =========================================================================
               RIGHT COLUMN: Contact Form
               ========================================================================= */}
-          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-16 bg-white/40 flex flex-col justify-center">
+          <div className="lg:col-span-7 p-5 sm:p-10 lg:p-16 bg-white/40 flex flex-col justify-center">
             {/* Success Confirmation State */}
             {status === "dispatched" ? (
-              <div className="p-8 border border-[#192434]/15 bg-white space-y-4 shadow-sm max-w-2xl">
+              <div className="p-6 sm:p-8 border border-[#192434]/15 bg-white space-y-4 shadow-sm max-w-2xl">
                 <div className="flex items-center gap-2 text-[#0B46A3] font-mono text-xs uppercase tracking-wider">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Message dispatched successfully</span>
@@ -120,10 +120,10 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 max-w-2xl">
                 {/* Error Banner */}
                 {status === "error" && errorMessage && (
-                  <div className="p-4 border border-rose-500/30 bg-rose-50/70 text-xs font-mono text-rose-800 flex items-start gap-2.5">
+                  <div className="p-3.5 sm:p-4 border border-rose-500/30 bg-rose-50/70 text-xs font-mono text-rose-800 flex items-start gap-2.5">
                     <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                     <div className="space-y-1">
                       <p className="font-medium">Transmission Error</p>
@@ -133,10 +133,10 @@ export default function ContactPage() {
                 )}
 
                 {/* Field 01: Name */}
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   <label
                     htmlFor="name"
-                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                    className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
                   >
                     YOUR NAME
                   </label>
@@ -149,15 +149,15 @@ export default function ContactPage() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="What should I call you?"
-                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors rounded-[2px]"
                   />
                 </div>
 
                 {/* Field 02: Email */}
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   <label
                     htmlFor="email"
-                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                    className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
                   >
                     YOUR EMAIL
                   </label>
@@ -170,15 +170,15 @@ export default function ContactPage() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder="Where can I reach you back?"
-                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors"
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors rounded-[2px]"
                   />
                 </div>
 
                 {/* Field 03: Message */}
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   <label
                     htmlFor="message"
-                    className="block text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
+                    className="block text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#192434]/60"
                   >
                     WHAT ARE WE BUILDING?
                   </label>
@@ -191,16 +191,16 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Hey Deepak — I loved your work on the Smart Agriculture system and wanted to chat about..."
-                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-4 py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors resize-none"
+                    className="w-full bg-[#F4F7FA]/80 border border-[#192434]/15 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-[#192434] placeholder:text-[#192434]/35 focus:border-[#0B46A3] focus:bg-white focus:outline-none transition-colors resize-none rounded-[2px]"
                   />
                 </div>
 
                 {/* Submit Button & Feedback */}
-                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B46A3] hover:bg-[#192434] text-[#F4F7FA] px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors shadow-sm disabled:opacity-50 cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B46A3] hover:bg-[#192434] active:bg-[#121c29] text-[#F4F7FA] px-7 py-3.5 font-mono text-xs uppercase tracking-widest transition-all shadow-sm disabled:opacity-50 cursor-pointer rounded-[2px]"
                   >
                     <span>
                       {status === "submitting" ? "Dispatching Message..." : "Dispatch Message"}
