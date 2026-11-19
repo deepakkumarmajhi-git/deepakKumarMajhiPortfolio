@@ -76,8 +76,8 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Direct Channel Telemetry Footer */}
-            <div className="pt-6 sm:pt-8 mt-8 sm:mt-10 lg:mt-16 border-t border-[#192434]/10 text-xs font-mono text-[#192434]/60 space-y-1.5">
+            {/* Direct Channel Telemetry Footer (Desktop & Tablet only) */}
+            <div className="hidden sm:block pt-6 sm:pt-8 mt-8 sm:mt-10 lg:mt-16 border-t border-[#192434]/10 text-xs font-mono text-[#192434]/60 space-y-1.5">
               <span className="text-[10px] text-[#192434]/40 uppercase tracking-widest block">
                 DIRECT INBOX
               </span>
