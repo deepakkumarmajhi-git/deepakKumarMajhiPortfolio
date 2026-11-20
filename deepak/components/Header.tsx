@@ -113,11 +113,10 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`transition-colors py-1 rounded-none ${
-                      isActive
-                        ? "text-[#0B46A3] font-medium border-b border-[#0B46A3]"
-                        : "hover:text-[#192434]"
-                    }`}
+                    className={`transition-colors py-1 rounded-none ${isActive
+                      ? "text-[#0B46A3] font-medium border-b border-[#0B46A3]"
+                      : "hover:text-[#192434]"
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -201,11 +200,10 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`flex items-center justify-center py-3.5 px-4 text-sm sm:text-[15px] font-mono uppercase tracking-widest text-center transition-all rounded-[2px] ${
-                              isActive
-                                ? "bg-[#0B46A3]/10 text-[#0B46A3] font-semibold"
-                                : "text-[#192434]/80 hover:text-[#192434] hover:bg-[#192434]/5 active:bg-[#192434]/10"
-                            }`}
+                            className={`flex items-center justify-center py-3.5 px-4 text-sm sm:text-[15px] font-mono uppercase tracking-widest text-center transition-all rounded-[2px] ${isActive
+                              ? "bg-[#0B46A3]/10 text-[#0B46A3] font-semibold"
+                              : "text-[#192434]/80 hover:text-[#192434] hover:bg-[#192434]/5 active:bg-[#192434]/10"
+                              }`}
                           >
                             <span>{link.name}</span>
                           </Link>

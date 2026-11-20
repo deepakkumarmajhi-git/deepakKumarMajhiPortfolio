@@ -37,7 +37,7 @@ export default function FloatingScrollTop() {
           whileHover={{ y: -3, scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 320, damping: 24 }}
-          className="cursor-pointer group fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#0D131D]/95 backdrop-blur-md text-[#F4F7FA] border border-white/15 shadow-[0_12px_32px_-8px_rgba(25,36,52,0.4)] transition-colors duration-300 hover:bg-[#0B46A3] hover:border-[#0B46A3]"
+          className="cursor-pointer group fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-40 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#0D131D]/95 backdrop-blur-md text-[#F4F7FA] border border-white/15 shadow-[0_12px_32px_-8px_rgba(25,36,52,0.4)] transition-all duration-300 hover:bg-[#0B46A3] hover:border-[#0B46A3] hover:shadow-[0_8px_24px_-4px_rgba(11,70,163,0.35)]"
         >
           {/* Dual-Slot Vertical Launch Arrow */}
           <div className="relative h-4 w-4 overflow-hidden">

@@ -21,9 +21,55 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deepak Kumar Majhi — Software & AI Engineer",
+  title: {
+    default: "Deepak Kumar Majhi — Software & AI Engineer",
+    template: "%s | Deepak Kumar Majhi",
+  },
   description:
     "Personal portfolio of Deepak Kumar Majhi. Software & AI Engineer based in Bhubaneswar, Odisha. Specializing in Python, Next.js, FastAPI, GenAI, and distributed intelligence.",
+  keywords: [
+    "Deepak Kumar Majhi",
+    "Software Engineer",
+    "AI Engineer",
+    "Full Stack Developer",
+    "Next.js",
+    "FastAPI",
+    "Python",
+    "Distributed Systems",
+    "Machine Learning",
+    "Bhubaneswar",
+  ],
+  authors: [{ name: "Deepak Kumar Majhi" }],
+  creator: "Deepak Kumar Majhi",
+  metadataBase: new URL("https://deepak-kumar-majhi-portfolio.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://deepak-kumar-majhi-portfolio.vercel.app",
+    title: "Deepak Kumar Majhi — Software & AI Engineer",
+    description:
+      "Software & AI Engineer specializing in distributed systems, machine learning pipelines, and production-grade intelligent architectures.",
+    siteName: "Deepak Kumar Majhi Portfolio",
+    images: [
+      {
+        url: "/images/about/deepak-portrait.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Deepak Kumar Majhi — Software & AI Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deepak Kumar Majhi — Software & AI Engineer",
+    description:
+      "Software & AI Engineer specializing in distributed systems, machine learning pipelines, and production-grade intelligent architectures.",
+    images: ["/images/about/deepak-portrait.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

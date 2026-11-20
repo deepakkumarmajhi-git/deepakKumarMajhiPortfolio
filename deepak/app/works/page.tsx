@@ -130,11 +130,10 @@ export default function WorksPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`py-3.5 px-5 transition-colors whitespace-nowrap uppercase tracking-wider ${
-                    isSelected
-                      ? "text-[#0B46A3] font-medium bg-[#0B46A3]/5 border-b-2 border-[#0B46A3]"
-                      : "text-[#192434]/60 hover:text-[#192434]"
-                  }`}
+                  className={`py-3.5 px-5 transition-colors whitespace-nowrap uppercase tracking-wider ${isSelected
+                    ? "text-[#0B46A3] font-medium bg-[#0B46A3]/5 border-b-2 border-[#0B46A3]"
+                    : "text-[#192434]/60 hover:text-[#192434]"
+                    }`}
                 >
                   {cat}
                 </button>
